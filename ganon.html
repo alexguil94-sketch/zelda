@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Chronologie de Ganon — 40 ans de Zelda</title>
+  <meta name="description" content="Chronologie de Ganon : l’évolution du Roi Démon à travers les trois lignes temporelles (Défaite / Enfant / Adulte) et l’Ère moderne."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Uncial+Antiqua&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/theme.js" defer></script>
+  <script src="js/burger.js" defer></script>
+  <script src="js/pageTurn.js" defer></script>
+  <script src="js/bannerPages.js" defer></script>
+</head>
+<body class="page-ganon">
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="header headerBanner">
+    <div class="banner">
+      <img class="banner-img" src="assets/img/ui/nav_banner.png" alt="Le Palais de Zelda — 40 ans de légendes">
+      <div class="banner-controls">
+        <div class="container banner-controls-inner">
+          <a class="brand brand--banner" href="index.html">
+            <img src="assets/logo/logo1_zelda_.jpeg" alt="Sceau d’Hyrule" />
+            <span>Les chroniques d’Hyrule</span>
+          </a>
+          <nav class="banner-nav" aria-label="Navigation rapide">
+            <a href="chronologie.html" class="bannerBtn">Chronologie</a>
+            <a href="ganon.html" class="bannerBtn is-active">Ganon</a>
+            <a href="zelda.html" class="bannerBtn">Zelda</a>
+            <a href="link.html" class="bannerBtn">Link</a>
+            <div class="bannerPages">
+              <button
+                class="bannerBtn bannerBtn--pages"
+                type="button"
+                data-pages-toggle
+                aria-expanded="false"
+                aria-controls="bannerPagesMenu"
+              >Pages</button>
+              <div class="bannerPagesMenu" id="bannerPagesMenu" role="menu" hidden>
+                <a role="menuitem" href="pages/1986-1995.html">1986–1995</a>
+                <a role="menuitem" href="pages/1996-2005.html">1996–2005</a>
+                <a role="menuitem" href="pages/2006-2015.html">2006–2015</a>
+                <a role="menuitem" href="pages/2016-2025.html">2016–2025</a>
+              </div>
+            </div>
+            <a href="game/index.html" class="bannerBtn bannerBtn--cta">Jeu</a>
+          </nav>
+          <button class="burger" data-burger aria-expanded="false" aria-controls="drawerNav" type="button">Menu</button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Basculer thème">🌙</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav navDrawer" data-nav id="drawerNav" aria-hidden="true">
+    <a href="index.html" class="">Accueil</a>
+    <a href="chronologie.html" class="">Chronologie</a>
+    <a href="ganon.html" class="is-active">Ganon</a>
+    <a href="zelda.html" class="">Zelda</a>
+    <a href="link.html" class="">Link</a>
+    <a href="game/index.html" class="nav-cta">Jeu</a>
+  </nav>
+  <div class="nav-overlay" data-nav-overlay hidden></div>
+
+  <main id="contenu">
+    <div class="bookShell openBook panelShell">
+      <span class="bookmark" aria-hidden="true"></span>
+      <div class="spine" aria-hidden="true"></div>
+      <div class="pageTurnStage">
+        <div class="pageTurn">
+
+          <!-- A) Hero -->
+          <section class="hero ganonHero">
+            <div class="container hero-inner">
+              <div class="hero-text">
+                <h1>Chronologie de Ganon</h1>
+                <p class="ganonSubtitle">L’évolution du Roi Démon à travers les trois lignes temporelles</p>
+
+                <div class="ganonOrigin" role="note" aria-label="Origine de la chronologie">
+                  <span class="ganonOriginTitle">Origine</span>
+                  <span class="ganonOriginGame">Ocarina of Time</span>
+                  <span class="ganonOriginHint muted">(point de départ)</span>
+                </div>
+
+                <div class="hero-actions">
+                  <a class="btn" href="#timelines">Voir les timelines</a>
+                  <a class="btn btn-ghost" href="#ere-moderne">Ère moderne</a>
+                </div>
+              </div>
+
+              <figure class="hero-card hero-card--ganon" aria-label="Carte héro Ganon">
+                <img
+                  class="hero-card-bg"
+                  data-ganon-hero-img
+                  src="assets/img/ui/chronologie_ref.jpg"
+                  alt="Ganondorf (image de remplacement)"
+                  loading="lazy"
+                />
+                <div class="hero-card-badge" aria-hidden="true">
+                  <svg viewBox="0 0 120 104" width="120" height="104">
+                    <polygon points="60,0 30,52 90,52" fill="rgba(242,201,76,.92)"/>
+                    <polygon points="30,52 0,104 60,104" fill="rgba(242,201,76,.92)"/>
+                    <polygon points="90,52 60,104 120,104" fill="rgba(242,201,76,.92)"/>
+                  </svg>
+                </div>
+                <figcaption>Astuce : remplace l’image dans <span class="ganonCode">js/ganon.js</span>.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- B) Grille 3 timelines -->
+          <section class="section" id="timelines" aria-labelledby="timelinesTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="timelinesTitle">Trois lignes temporelles</h2>
+                <p>Chaque branche explore un visage différent de Ganon — de la défaite à la légende.</p>
+              </div>
+
+              <div class="ganonFilters" role="group" aria-label="Filtrer la chronologie">
+                <button class="btn btn-small filterBtn is-active" type="button" data-filter="all" aria-pressed="true">Tout</button>
+                <button class="btn btn-small filterBtn" type="button" data-filter="defeat" aria-pressed="false">Défaite</button>
+                <button class="btn btn-small filterBtn" type="button" data-filter="child" aria-pressed="false">Enfant</button>
+                <button class="btn btn-small filterBtn" type="button" data-filter="adult" aria-pressed="false">Adulte</button>
+                <button class="btn btn-small filterBtn" type="button" data-filter="modern" aria-pressed="false">Moderne</button>
+              </div>
+
+              <div class="ganonTimelineGrid" data-ganon-timelines></div>
+            </div>
+          </section>
+
+          <!-- C) Bandeau Ère moderne -->
+          <section class="section" id="ere-moderne" aria-labelledby="modernTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="modernTitle">Ère moderne</h2>
+                <p>Deux incarnations majeures : la Calamité… puis le Ganondorf restauré.</p>
+              </div>
+            </div>
+
+            <div class="ganonBand" aria-label="Bandeau ère moderne">
+              <div class="container">
+                <div class="ganonModernGrid" data-ganon-modern></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- D) Galerie -->
+          <section class="section" id="galerie" aria-labelledby="galleryTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="galleryTitle">Galerie par époque</h2>
+                <p>Visuels clés de Ganon et de ses incarnations dans les grandes branches.</p>
+              </div>
+              <div class="ganonGalleryGrid" data-ganon-gallery></div>
+            </div>
+          </section>
+
+          <!-- E) Biographie étendue -->
+          <section class="section" id="biographie" aria-labelledby="bioTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="bioTitle">Biographie de Ganon (jeu par jeu)</h2>
+                <p>Synthèse de recherche : évolution du personnage, résurrections, sceaux et transformations majeures.</p>
+              </div>
+
+              <div class="ganonAppearances" data-ganon-appearances aria-label="Jeux majeurs de Ganon"></div>
+              <div class="ganonLoreGrid" data-ganon-bio></div>
+            </div>
+          </section>
+
+          <!-- F) Dossier -->
+          <section class="section" id="dossier" aria-labelledby="dossierTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="dossierTitle">Contexte, personnalité et capacités</h2>
+                <p>Portrait complet : origine, ambitions, pouvoirs, nomenclature et arsenal.</p>
+              </div>
+
+              <div class="ganonDossierGrid" data-ganon-dossier></div>
+            </div>
+          </section>
+
+          <!-- G) Références -->
+          <section class="section" id="references" aria-labelledby="refsTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="refsTitle">Références de la page</h2>
+                <p>Base de synthèse utilisée pour structurer la biographie et le dossier.</p>
+              </div>
+              <div class="ganonRefsCard" data-ganon-references></div>
+            </div>
+          </section>
+
+          <!-- H) Légende / explication -->
+          <section class="section" aria-labelledby="legendTitle">
+            <div class="container">
+              <aside class="ganonLegend" aria-labelledby="legendTitle">
+                <h2 id="legendTitle">Légende</h2>
+                <p><strong>Après Ocarina of Time, 3 réalités</strong> coexistent dans la chronologie officielle.</p>
+                <ul class="ganonLegendList">
+                  <li><strong>Puissance</strong> — la Triforce de la Force (souvent associée à Ganon).</li>
+                  <li><strong>Courage</strong> — la Triforce du Courage (Link).</li>
+                  <li><strong>Sagesse</strong> — la Triforce de la Sagesse (Zelda).</li>
+                </ul>
+              </aside>
+            </div>
+          </section>
+
+          <footer class="footer siteFooter">
+            <div class="container">
+              <div class="footerCard">
+                <div class="footerGrid">
+                  <div class="footerBrand">
+                    <a class="brand footerBrandLink" href="index.html">
+                      <img src="assets/logo/logo1_zelda_.jpeg" alt="Sceau d’Hyrule" />
+                      <span>Les chroniques d’Hyrule</span>
+                    </a>
+                    <p class="footerTagline">Chronologie interactive + fiches de recherches par décennie.</p>
+                  </div>
+
+                  <nav class="footerNav" aria-label="Navigation du site">
+                    <a href="index.html">Accueil</a>
+                    <a href="chronologie.html">Chronologie</a>
+                    <a href="ganon.html">Ganon</a>
+                    <a href="zelda.html">Zelda</a>
+                    <a href="link.html">Link</a>
+                    <a href="pages/1986-1995.html">1986–1995</a>
+                    <a href="pages/1996-2005.html">1996–2005</a>
+                    <a href="pages/2006-2015.html">2006–2015</a>
+                    <a href="pages/2016-2025.html">2016–2025</a>
+                    <a href="game/index.html">Mini-jeu</a>
+                  </nav>
+
+                  <div class="footerMeta">
+                    <p class="footerNote"><strong>40 ans de Zelda</strong> — projet vitrine (HTML/CSS/JS). Non affilié à Nintendo.</p>
+                    <a class="footerTop" href="#contenu">Retour en haut</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/ganon.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <title>Princesse Zelda — Histoire, incarnations, pouvoirs &amp; timeline</title>
+  <meta name="description" content="Princesse Zelda : héritage d’Hylia, Sagesse sacrée, pouvoirs de lumière, incarnations marquantes et timeline dorée — l’espoir qui tient Hyrule debout, toujours."/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <meta property="og:title" content="Princesse Zelda — Histoire, incarnations, pouvoirs &amp; timeline"/>
+  <meta property="og:description" content="Princesse Zelda : héritage d’Hylia, Sagesse sacrée, pouvoirs de lumière, incarnations marquantes et timeline dorée — l’espoir qui tient Hyrule debout, toujours."/>
+  <meta property="og:image" content="assets/img/ui/chronologie_ref.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&amp;family=Uncial+Antiqua&amp;family=EB+Garamond:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/theme.js" defer></script>
+  <script src="js/burger.js" defer></script>
+  <script src="js/pageTurn.js" defer></script>
+  <script src="js/bannerPages.js" defer></script>
+</head>
+<body class="page-zelda">
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="header headerBanner">
+    <div class="banner">
+      <img class="banner-img" src="assets/img/ui/nav_banner.png" alt="Le Palais de Zelda — 40 ans de légendes">
+      <div class="banner-controls">
+        <div class="container banner-controls-inner">
+          <a class="brand brand--banner" href="index.html">
+            <img src="assets/logo/logo1_zelda_.jpeg" alt="Sceau d’Hyrule" />
+            <span>Les chroniques d’Hyrule</span>
+          </a>
+          <nav class="banner-nav" aria-label="Navigation rapide">
+            <a href="chronologie.html" class="bannerBtn">Chronologie</a>
+            <a href="ganon.html" class="bannerBtn">Ganon</a>
+            <a href="zelda.html" class="bannerBtn is-active">Zelda</a>
+            <a href="link.html" class="bannerBtn">Link</a>
+            <div class="bannerPages">
+              <button
+                class="bannerBtn bannerBtn--pages"
+                type="button"
+                data-pages-toggle
+                aria-expanded="false"
+                aria-controls="bannerPagesMenu"
+              >Pages</button>
+              <div class="bannerPagesMenu" id="bannerPagesMenu" role="menu" hidden>
+                <a role="menuitem" href="pages/1986-1995.html">1986–1995</a>
+                <a role="menuitem" href="pages/1996-2005.html">1996–2005</a>
+                <a role="menuitem" href="pages/2006-2015.html">2006–2015</a>
+                <a role="menuitem" href="pages/2016-2025.html">2016–2025</a>
+              </div>
+            </div>
+            <a href="game/index.html" class="bannerBtn bannerBtn--cta">Jeu</a>
+          </nav>
+          <button class="burger" data-burger aria-expanded="false" aria-controls="drawerNav" type="button">Menu</button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Basculer thème">🌙</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav navDrawer" data-nav id="drawerNav" aria-hidden="true">
+    <a href="index.html" class="">Accueil</a>
+    <a href="chronologie.html" class="">Chronologie</a>
+    <a href="ganon.html" class="">Ganon</a>
+    <a href="zelda.html" class="is-active">Zelda</a>
+    <a href="link.html" class="">Link</a>
+    <a href="game/index.html" class="nav-cta">Jeu</a>
+  </nav>
+  <div class="nav-overlay" data-nav-overlay hidden></div>
+
+  <main id="contenu">
+    <div class="bookShell openBook panelShell">
+      <span class="bookmark" aria-hidden="true"></span>
+      <div class="spine" aria-hidden="true"></div>
+      <div class="pageTurnStage">
+        <div class="pageTurn">
+
+          <!-- 1) HERO -->
+          <section class="hero zelda-hero">
+            <div class="container hero-inner">
+              <div class="hero-text zelda-heroText" data-reveal>
+                <h1 data-zelda-hero-title>Princesse Zelda</h1>
+                <p class="zelda-heroSubtitle" data-zelda-hero-subtitle>Héritière d’Hylia • Porteuse de la Sagesse • Gardienne d’Hyrule</p>
+
+                <div class="rune-divider" aria-hidden="true"></div>
+
+                <section class="zelda-summary" aria-labelledby="summaryTitle">
+                  <h2 id="summaryTitle" class="zelda-summaryTitle">Résumé express</h2>
+                  <ul class="zelda-summaryList" data-zelda-hero-bullets></ul>
+                </section>
+
+                <blockquote class="zelda-quote" data-zelda-hero-quote-wrap>
+                  <p data-zelda-hero-quote></p>
+                </blockquote>
+
+                <nav class="zelda-subnav" aria-label="Navigation de la page">
+                  <a class="btn btn-small" href="#origines">Origines</a>
+                  <a class="btn btn-small" href="#pouvoirs">Pouvoirs</a>
+                  <a class="btn btn-small" href="#incarnations">Incarnations</a>
+                  <a class="btn btn-small" href="#timeline">Timeline</a>
+                  <a class="btn btn-small" href="#relations">Relations</a>
+                </nav>
+              </div>
+
+              <figure class="hero-card hero-card--zelda" aria-label="Carte héro Zelda" data-reveal>
+                <img
+                  class="hero-card-bg"
+                  data-zelda-hero-img
+                  src="assets/img/ui/chronologie_ref.jpg"
+                  alt="Princesse Zelda (image de remplacement)"
+                  loading="lazy"
+                />
+                <div class="hero-card-sigil" aria-hidden="true">
+                  <svg viewBox="0 0 120 104" width="116" height="100">
+                    <polygon points="60,0 30,52 90,52" fill="rgba(242,201,76,.92)"/>
+                    <polygon points="30,52 0,104 60,104" fill="rgba(242,201,76,.38)"/>
+                    <polygon points="90,52 60,104 120,104" fill="rgba(242,201,76,.38)"/>
+                  </svg>
+                </div>
+                <figcaption>Astuce : remplace images &amp; textes dans <span class="zelda-code">js/zelda.js</span>.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- 2) ORIGINES & LIGNÉE -->
+          <section class="section" id="origines" aria-labelledby="originesTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="originesTitle">Origines &amp; lignée</h2>
+                <p>Un héritage qui traverse les ères : même nom, mêmes devoirs, mille visages.</p>
+              </div>
+
+              <div class="zelda-prose" data-zelda-origins data-reveal></div>
+
+              <div class="zelda-accordion" data-reveal>
+                <button class="btn btn-small zelda-accordionBtn" type="button" data-accordion-trigger aria-expanded="false" aria-controls="zeldaOriginsMore">
+                  Lire le serment de la lignée
+                </button>
+                <div class="zelda-accordionPanel" id="zeldaOriginsMore" role="region" aria-label="Détails sur la lignée" hidden></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3) POUVOIRS & ARTEFACTS -->
+          <section class="section" id="pouvoirs" aria-labelledby="powersTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="powersTitle">Pouvoirs &amp; artefacts</h2>
+                <p>La Sagesse n’est pas une arme : c’est une lumière qui choisit quand frapper… et quand protéger.</p>
+              </div>
+
+              <div class="zelda-grid zelda-powers" data-zelda-powers></div>
+            </div>
+          </section>
+
+          <!-- 4) INCARNATIONS (carrousel) -->
+          <section class="section" id="incarnations" aria-labelledby="incarnationsTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="incarnationsTitle">Incarnations</h2>
+                <p>À chaque grand épisode, une Zelda différente — et pourtant, la même flamme royale.</p>
+              </div>
+
+              <section class="zelda-carousel" role="region" aria-roledescription="carousel" aria-label="Galerie des incarnations de Zelda" data-zelda-carousel>
+                <div class="zelda-carouselHead">
+                  <p class="muted zelda-carouselHint">Utilise les boutons pour parcourir la galerie. Les cartes sont lisibles au clavier.</p>
+                  <div class="zelda-carouselControls">
+                    <button class="btn btn-small" type="button" data-carousel-prev aria-controls="zeldaCarouselTrack" aria-label="Carte précédente">←</button>
+                    <button class="btn btn-small" type="button" data-carousel-next aria-controls="zeldaCarouselTrack" aria-label="Carte suivante">→</button>
+                  </div>
+                </div>
+
+                <div class="zelda-carouselTrack" id="zeldaCarouselTrack" data-zelda-carousel-track></div>
+              </section>
+            </div>
+          </section>
+
+          <!-- 5) TIMELINE VISUELLE -->
+          <section class="section" id="timeline" aria-labelledby="timelineTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="timelineTitle">Timeline visuelle</h2>
+                <p>Huit repères. Un fil doré. La Sagesse, de l’aube à l’ère moderne.</p>
+              </div>
+
+              <div class="zelda-timelineWrap" data-reveal>
+                <ol class="timeline zelda-timeline" role="list" data-zelda-timeline></ol>
+              </div>
+            </div>
+          </section>
+
+          <!-- 6) RELATIONS CLÉS -->
+          <section class="section" id="relations" aria-labelledby="relationsTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="relationsTitle">Relations clés</h2>
+                <p>Trois forces autour de Zelda : l’élan, la mémoire, et l’ombre.</p>
+              </div>
+
+              <div class="zelda-grid zelda-relations" data-zelda-relations></div>
+            </div>
+          </section>
+
+          <!-- 7) POURQUOI ZELDA COMPTE -->
+          <section class="section section-muted" aria-labelledby="whyTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="whyTitle">Pourquoi Zelda compte</h2>
+                <p>Quand la Force rugit, la Sagesse répond — et l’espoir se relève.</p>
+              </div>
+
+              <div class="zelda-prose zelda-why" data-zelda-why data-reveal></div>
+            </div>
+          </section>
+
+          <footer class="footer siteFooter">
+            <div class="container">
+              <div class="footerCard">
+                <div class="footerGrid">
+                  <div class="footerBrand">
+                    <a class="brand footerBrandLink" href="index.html">
+                      <img src="assets/logo/logo1_zelda_.jpeg" alt="Sceau d’Hyrule" />
+                      <span>Les chroniques d’Hyrule</span>
+                    </a>
+                    <p class="footerTagline">Chronologie interactive + fiches de recherches par décennie.</p>
+                  </div>
+
+                  <nav class="footerNav" aria-label="Navigation du site">
+                    <a href="index.html">Accueil</a>
+                    <a href="chronologie.html">Chronologie</a>
+                    <a href="ganon.html">Ganon</a>
+                    <a href="zelda.html">Zelda</a>
+                    <a href="link.html">Link</a>
+                    <a href="pages/1986-1995.html">1986–1995</a>
+                    <a href="pages/1996-2005.html">1996–2005</a>
+                    <a href="pages/2006-2015.html">2006–2015</a>
+                    <a href="pages/2016-2025.html">2016–2025</a>
+                    <a href="game/index.html">Mini-jeu</a>
+                  </nav>
+
+                  <div class="footerMeta">
+                    <p class="footerNote"><strong>40 ans de Zelda</strong> — projet vitrine (HTML/CSS/JS). Non affilié à Nintendo.</p>
+                    <a class="footerTop" href="#contenu">Retour en haut</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/zelda.js"></script>
+</body>
+</html>

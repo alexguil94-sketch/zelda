@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Chronologie — 40 ans de Zelda</title>
+  <meta name="description" content="Menu interactif en forme de chronologie pour celebrer les 40 ans de The Legend of Zelda (1986-2025)."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Uncial+Antiqua&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/theme.js" defer></script>
+  <script src="js/burger.js" defer></script>
+  <script src="js/pageTurn.js" defer></script>
+  <script src="js/bannerPages.js" defer></script>
+</head>
+<body class="page-chronologie">
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="header headerBanner">
+    <div class="banner">
+      <img class="banner-img" src="assets/img/ui/nav_banner.png" alt="Le Palais de Zelda — 40 ans de legendes">
+      <div class="banner-controls">
+        <div class="container banner-controls-inner">
+          <a class="brand brand--banner" href="index.html">
+            <img src="assets/logo/logo1_zelda_.jpeg" alt="Sceau d'Hyrule" />
+            <span>Les chroniques d'Hyrule</span>
+          </a>
+          <nav class="banner-nav" aria-label="Navigation rapide">
+            <a href="chronologie.html" class="bannerBtn is-active">Chronologie</a>
+            <a href="ganon.html" class="bannerBtn">Ganon</a>
+            <a href="zelda.html" class="bannerBtn">Zelda</a>
+            <a href="link.html" class="bannerBtn">Link</a>
+            <div class="bannerPages">
+              <button
+                class="bannerBtn bannerBtn--pages"
+                type="button"
+                data-pages-toggle
+                aria-expanded="false"
+                aria-controls="bannerPagesMenu"
+              >Pages</button>
+              <div class="bannerPagesMenu" id="bannerPagesMenu" role="menu" hidden>
+                <a role="menuitem" href="pages/1986-1995.html">1986-1995</a>
+                <a role="menuitem" href="pages/1996-2005.html">1996-2005</a>
+                <a role="menuitem" href="pages/2006-2015.html">2006-2015</a>
+                <a role="menuitem" href="pages/2016-2025.html">2016-2025</a>
+              </div>
+            </div>
+            <a href="game/index.html" class="bannerBtn bannerBtn--cta">Jeu</a>
+          </nav>
+          <button class="burger" data-burger aria-expanded="false" aria-controls="drawerNav" type="button">Menu</button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Basculer theme">🌙</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav navDrawer" data-nav id="drawerNav" aria-hidden="true">
+    <a href="index.html" class="">Accueil</a>
+    <a href="chronologie.html" class="is-active">Chronologie</a>
+    <a href="ganon.html" class="">Ganon</a>
+    <a href="zelda.html" class="">Zelda</a>
+    <a href="link.html" class="">Link</a>
+    <a href="game/index.html" class="nav-cta">Jeu</a>
+  </nav>
+  <div class="nav-overlay" data-nav-overlay hidden></div>
+
+  <main id="contenu">
+    <div class="bookShell openBook panelShell">
+      <span class="bookmark" aria-hidden="true"></span>
+      <div class="spine" aria-hidden="true"></div>
+      <div class="pageTurnStage">
+        <div class="pageTurn">
+
+          <section class="hero">
+            <div class="container hero-inner">
+              <div class="hero-text">
+                <h1>La Chronologie Interactive</h1>
+                <p>
+                  Clique une epoque (ou un jeu de l'arbre officiel) pour ouvrir une fenetre avec 2 images + un resume court.
+                  Tu peux ensuite entrer dans la page correspondante, ou lancer le mini-jeu.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#portails">Explorer par decennie</a>
+                  <a class="btn btn-ghost" href="#arbre">Voir l'arbre officiel (resume)</a>
+                </div>
+              </div>
+
+              <figure class="hero-card" aria-label="Apercu de la chronologie">
+                <img
+                  src="assets/img/ui/chronologie_ref.jpg"
+                  alt="Apercu d'une chronologie Zelda (image de reference)"
+                  loading="lazy"
+                  data-hero-img
+                  data-zoomable
+                />
+                <figcaption>Astuce : sur les images, clique pour <strong>zoomer</strong>.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section id="portails" class="section">
+            <div class="container">
+              <div class="section-head">
+                <h2>Choisis ton epoque</h2>
+                <p>Ces 4 cartes ouvrent soit les details, soit la page complete par decennie.</p>
+              </div>
+
+              <div class="portal-grid">
+                <article class="portal" style="--accent: var(--gold)">
+                  <div class="portal-top">
+                    <h3>1986 - 1995</h3>
+                    <p>Naissance et fondations (ere 2D)</p>
+                  </div>
+                  <div class="portal-actions">
+                    <button class="btn btn-small" data-open="era-1986" type="button">Details</button>
+                    <a class="btn btn-small btn-ghost" href="pages/1986-1995.html">Entrer</a>
+                  </div>
+                </article>
+
+                <article class="portal" style="--accent: var(--blue)">
+                  <div class="portal-top">
+                    <h3>1996 - 2005</h3>
+                    <p>Revolution 3D et experimentation</p>
+                  </div>
+                  <div class="portal-actions">
+                    <button class="btn btn-small" data-open="era-1996" type="button">Details</button>
+                    <a class="btn btn-small btn-ghost" href="pages/1996-2005.html">Entrer</a>
+                  </div>
+                </article>
+
+                <article class="portal" style="--accent: var(--stone)">
+                  <div class="portal-top">
+                    <h3>2006 - 2015</h3>
+                    <p>Nouveaux horizons (Wii / DS / 3DS)</p>
+                  </div>
+                  <div class="portal-actions">
+                    <button class="btn btn-small" data-open="era-2006" type="button">Details</button>
+                    <a class="btn btn-small btn-ghost" href="pages/2006-2015.html">Entrer</a>
+                  </div>
+                </article>
+
+                <article class="portal" style="--accent: var(--ruby)">
+                  <div class="portal-top">
+                    <h3>2016 - 2025</h3>
+                    <p>Monde ouvert et futur (ere sandbox)</p>
+                  </div>
+                  <div class="portal-actions">
+                    <button class="btn btn-small" data-open="era-2016" type="button">Details</button>
+                    <a class="btn btn-small btn-ghost" href="pages/2016-2025.html">Entrer</a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="mini-game-callout">
+                <div>
+                  <h3>Envie d'un detour ?</h3>
+                  <p>Lance ton mini-jeu direct (dossier <span class="code">/game</span>).</p>
+                </div>
+                <a class="btn" href="game/index.html">Jouer au mini-jeu</a>
+              </div>
+            </div>
+          </section>
+
+          <section id="arbre" class="section section-muted">
+            <div class="container">
+              <div class="section-head">
+                <h2>L'arbre chronologique (resume)</h2>
+                <p>
+                  Version menu : clique un jeu pour ouvrir une fiche rapide.
+                  (Tu peux ajouter/retirer des jeux dans <span class="code">js/chronologie.js</span>.)
+                </p>
+              </div>
+
+              <div class="tree">
+                <div class="tree-root">
+                  <button class="tree-node" data-open="oot" type="button">
+                    <span class="tree-title">Ocarina of Time</span>
+                    <span class="tree-sub">Le point de rupture (le Split)</span>
+                  </button>
+                </div>
+
+                <div class="tree-branches" role="list">
+                  <div class="branch" role="listitem">
+                    <h3>Heros Dechu</h3>
+                    <div class="branch-list">
+                      <button class="tree-node" data-open="alttp" type="button">A Link to the Past</button>
+                      <button class="tree-node" data-open="oracles" type="button">Oracle of Ages / Seasons</button>
+                      <button class="tree-node" data-open="la" type="button">Link's Awakening</button>
+                      <button class="tree-node" data-open="albw" type="button">A Link Between Worlds</button>
+                    </div>
+                  </div>
+
+                  <div class="branch" role="listitem">
+                    <h3>Heros Enfant</h3>
+                    <div class="branch-list">
+                      <button class="tree-node" data-open="mm" type="button">Majora's Mask</button>
+                      <button class="tree-node" data-open="tp" type="button">Twilight Princess</button>
+                      <button class="tree-node" data-open="fsa" type="button">Four Swords Adventures</button>
+                    </div>
+                  </div>
+
+                  <div class="branch" role="listitem">
+                    <h3>Heros Adulte</h3>
+                    <div class="branch-list">
+                      <button class="tree-node" data-open="ww" type="button">The Wind Waker</button>
+                      <button class="tree-node" data-open="ph" type="button">Phantom Hourglass</button>
+                      <button class="tree-node" data-open="st" type="button">Spirit Tracks</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tree-convergence">
+                  <div class="convergence-line" aria-hidden="true"></div>
+                  <div class="convergence-nodes">
+                    <button class="tree-node" data-open="botw" type="button">Breath of the Wild</button>
+                    <button class="tree-node" data-open="totk" type="button">Tears of the Kingdom</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <footer class="footer siteFooter">
+            <div class="container">
+              <div class="footerCard">
+                <div class="footerGrid">
+                  <div class="footerBrand">
+                    <a class="brand footerBrandLink" href="index.html">
+                      <img src="assets/logo/logo1_zelda_.jpeg" alt="Sceau d'Hyrule" />
+                      <span>Les chroniques d'Hyrule</span>
+                    </a>
+                    <p class="footerTagline">Chronologie interactive + fiches de recherches par decennie.</p>
+                  </div>
+
+                  <nav class="footerNav" aria-label="Navigation du site">
+                    <a href="index.html">Accueil</a>
+                    <a href="chronologie.html">Chronologie</a>
+                    <a href="ganon.html">Ganon</a>
+                    <a href="zelda.html">Zelda</a>
+                    <a href="link.html">Link</a>
+                    <a href="pages/1986-1995.html">1986-1995</a>
+                    <a href="pages/1996-2005.html">1996-2005</a>
+                    <a href="pages/2006-2015.html">2006-2015</a>
+                    <a href="pages/2016-2025.html">2016-2025</a>
+                    <a href="game/index.html">Mini-jeu</a>
+                  </nav>
+
+                  <div class="footerMeta">
+                    <p class="footerNote"><strong>40 ans de Zelda</strong> - projet vitrine (HTML/CSS/JS). Non affilie a Nintendo.</p>
+                    <a class="footerTop" href="#contenu">Retour en haut</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" data-modal hidden>
+    <div class="modal-backdrop" data-close tabindex="-1" aria-hidden="true"></div>
+
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal-head">
+        <div>
+          <h2 id="modalTitle">Titre</h2>
+          <p id="modalSub" class="muted">Sous-titre</p>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Fermer">X</button>
+      </header>
+
+      <div class="modal-body">
+        <div class="modal-media">
+          <button class="media" type="button" data-zoom aria-label="Zoom image 1">
+            <img id="modalImg1" alt="" loading="lazy" />
+            <span class="media-hint">Cliquer pour zoom</span>
+          </button>
+          <button class="media" type="button" data-zoom aria-label="Zoom image 2">
+            <img id="modalImg2" alt="" loading="lazy" />
+            <span class="media-hint">Cliquer pour zoom</span>
+          </button>
+        </div>
+
+        <div class="modal-text">
+          <ul id="modalLines" class="bullets"></ul>
+          <div class="modal-actions">
+            <a id="modalCta" class="btn" href="#">Ouvrir</a>
+            <button class="btn btn-ghost" type="button" data-close>Fermer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="lightbox" data-lightbox hidden>
+    <div class="lightbox-backdrop" data-lb-close aria-hidden="true"></div>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Zoom image">
+      <div class="lightbox-toolbar">
+        <div class="lightbox-actions">
+          <button class="btn btn-small" type="button" data-lb-minus aria-label="Zoom moins">-</button>
+          <button class="btn btn-small" type="button" data-lb-reset>100%</button>
+          <button class="btn btn-small" type="button" data-lb-plus aria-label="Zoom plus">+</button>
+        </div>
+        <button class="icon-btn" type="button" data-lb-close aria-label="Fermer le zoom">X</button>
+      </div>
+      <div class="lightbox-stage" data-lb-stage>
+        <img data-lb-img alt="" />
+      </div>
+      <p class="lightbox-hint muted">Molette pour zoom - Cliquer-glisser pour deplacer</p>
+    </div>
+  </div>
+
+  <script src="js/chronologie.js"></script>
+</body>
+</html>

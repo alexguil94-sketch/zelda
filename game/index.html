@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini‑jeu — 40 ans de Zelda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Uncial+Antiqua&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/burger.js" defer></script>
+  <script src="../js/bannerPages.js" defer></script>
+</head>
+<body class="page-game">
+  <canvas id="fxCanvas" class="fxCanvas" aria-hidden="true"></canvas>
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="header headerBanner">
+    <div class="banner">
+      <img class="banner-img" src="../assets/img/ui/nav_banner.png" alt="Le Palais de Zelda — 40 ans de légendes">
+      <div class="banner-controls">
+        <div class="container banner-controls-inner">
+          <a class="brand brand--banner" href="../index.html">
+            <img src="../assets/logo/logo1_zelda_.jpeg" alt="Sceau d’Hyrule" />
+            <span>Les chroniques d’Hyrule</span>
+          </a>
+
+          <nav class="banner-nav" aria-label="Navigation rapide">
+            <a href="../chronologie.html" class="bannerBtn">Chronologie</a>
+            <a href="../ganon.html" class="bannerBtn">Ganon</a>
+            <a href="../zelda.html" class="bannerBtn">Zelda</a>
+            <a href="../link.html" class="bannerBtn">Link</a>
+            <div class="bannerPages">
+              <button
+                class="bannerBtn bannerBtn--pages"
+                type="button"
+                data-pages-toggle
+                aria-expanded="false"
+                aria-controls="bannerPagesMenu"
+              >Pages</button>
+              <div class="bannerPagesMenu" id="bannerPagesMenu" role="menu" hidden>
+                <a role="menuitem" href="../pages/1986-1995.html">1986–1995</a>
+                <a role="menuitem" href="../pages/1996-2005.html">1996–2005</a>
+                <a role="menuitem" href="../pages/2006-2015.html">2006–2015</a>
+                <a role="menuitem" href="../pages/2016-2025.html">2016–2025</a>
+              </div>
+            </div>
+            <a href="../game/index.html" class="bannerBtn bannerBtn--cta is-active">Jeu</a>
+          </nav>
+
+          <button class="burger" data-burger aria-expanded="false" aria-controls="drawerNav" type="button">Menu</button>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Basculer thème">🌙</button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="nav navDrawer" data-nav id="drawerNav" aria-hidden="true">
+    <a href="../index.html" class="">Accueil</a>
+    <a href="../chronologie.html" class="">Chronologie</a>
+    <a href="../ganon.html" class="">Ganon</a>
+    <a href="../zelda.html" class="">Zelda</a>
+    <a href="../link.html" class="">Link</a>
+    <a href="../pages/1986-1995.html" class="">1986–1995</a>
+    <a href="../pages/1996-2005.html" class="">1996–2005</a>
+    <a href="../pages/2006-2015.html" class="">2006–2015</a>
+    <a href="../pages/2016-2025.html" class="">2016–2025</a>
+    <a href="../game/index.html" class="nav-cta is-active">Jeu</a>
+  </nav>
+  <div class="nav-overlay" data-nav-overlay hidden></div>
+
+  <main id="contenu">
+    <div class="bookShell openBook panelShell">
+      <span class="bookmark" aria-hidden="true"></span>
+      <div class="spine" aria-hidden="true"></div>
+        <div class="pageTurnStage">
+          <div class="pageTurn">
+          <section class="section gameSection" aria-label="Menu du mini‑jeu">
+            <div class="container">
+              <div class="gameTopbar">
+                <nav class="gameMenu" aria-label="Onglets du jeu">
+                  <button class="btn btn-small tab is-active" data-screen="home" type="button">Accueil</button>
+                  <button class="btn btn-small tab" data-screen="tribute" type="button">Chronologie</button>
+                  <button class="btn btn-small tab" data-screen="anniv" type="button">40 ans</button>
+                  <button class="btn btn-small tab" data-screen="game" type="button" id="btnResume">Reprendre</button>
+                </nav>
+
+                <div class="gameTools">
+                  <button class="btn btn-small" type="button" id="toggleSound" aria-pressed="true">🔊 Son</button>
+                  <a class="btn btn-small btn-ghost" href="../chronologie.html" id="btnBackToSite">↩ Retour</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section section-muted" aria-labelledby="gameIntroTitle">
+            <div class="container">
+              <div class="section-head">
+                <h2 id="gameIntroTitle">But du mini‑jeu</h2>
+                <p>Avance scène par scène : fais des choix, gagne des rubis, débloque des badges… et atteins une fin.</p>
+              </div>
+
+              <div class="portal-grid" style="grid-template-columns: 1fr;">
+                <article class="portal" style="--accent: var(--gold)">
+                  <div class="portal-top">
+                    <h3>Comment ça marche</h3>
+                    <p>8 étapes • 3 choix par étape • mini‑défis ponctuels.</p>
+                  </div>
+                  <ul class="linkList" style="margin: 10px 0 0; padding-left: 18px;">
+                    <li><strong>Choisis</strong> : chaque décision modifie les ressources et les événements.</li>
+                    <li><strong>Réussis</strong> des mini‑jeux (runes, mémoire, timing…) pour gagner des avantages.</li>
+                    <li><strong>Sauvegarde auto</strong> : “Reprendre” se débloque dès qu’une sauvegarde existe.</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </section>
+          <div class="wrap">
+    <!-- HOME -->
+    <section class="screen active" id="screen-home">
+      <div class="panel">
+        <h1>Mini‑jeu : aventure en 8 étapes</h1>
+        <p class="muted">Choisis un nom + une difficulté, puis avance scène par scène (3 choix à chaque étape).</p>
+
+        <div class="form">
+          <label for="playerName">Nom du héros</label>
+          <input id="playerName" type="text" placeholder="Ton pseudo" maxlength="18" />
+
+          <label for="difficulty">Difficulté</label>
+          <select id="difficulty">
+            <option value="easy">Facile</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Difficile</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <button class="btn primary" id="btnStart" type="button">Commencer</button>
+          <button class="btn" id="btnContinue" type="button">Continuer</button>
+          <button class="btn ghost" id="btnReset" type="button">Réinitialiser</button>
+        </div>
+
+        <p class="hint">Le bouton “Reprendre” s’active quand une sauvegarde existe.</p>
+      </div>
+    </section>
+
+    <!-- TRIBUTE -->
+    <section class="screen" id="screen-tribute">
+      <div class="panel">
+        <h1>Timeline liée au jeu</h1>
+        <p class="muted">Clique une entrée pour ouvrir le détail.</p>
+        <div class="timeline" id="tributeTimeline"></div>
+      </div>
+    </section>
+
+    <!-- ANNIV -->
+    <section class="screen" id="screen-anniv">
+      <div class="panel">
+        <h1>40 ans</h1>
+        <div class="countbox">
+          <div class="countTitle">Prochain anniversaire</div>
+          <div class="countdown" id="countdown">—</div>
+          <div class="countFoot muted">Astuce : lance le jeu depuis “Commencer”.</div>
+        </div>
+        <div class="row">
+          <button class="btn primary" type="button" id="btnLaunchFromAnniv">Commencer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="screen" id="screen-game" aria-live="polite">
+      <div class="hud">
+        <div class="hudLeft">
+          <div class="hudItem">❤️ <span id="hudHearts">5</span></div>
+          <div class="hudItem">💎 <span id="hudRubies">0</span></div>
+        </div>
+        <div class="hudMid">
+          <div class="hudLabel">Progression</div>
+          <div class="bar"><span class="barFill" id="hudProgressBar"></span></div>
+        </div>
+        <div class="hudRight">
+          <div class="hudItem" id="hudInv">Inventaire : —</div>
+        </div>
+      </div>
+
+      <div class="panel panel--scene" id="scenePanel">
+        <div class="sceneHead">
+          <div>
+            <h2 id="sceneTitle">Scène</h2>
+            <div class="meta" id="sceneMeta">—</div>
+          </div>
+          <div class="badgeRow" id="sceneBadges"></div>
+        </div>
+
+        <p class="sceneText typewriter" id="sceneText"></p>
+        <div class="choices" id="choices"></div>
+
+        <div class="minigame" id="minigameHost" hidden></div>
+
+        <p class="foot muted" id="sceneFoot"></p>
+      </div>
+    </section>
+
+    <!-- END -->
+    <section class="screen" id="screen-end">
+      <div class="panel">
+        <h1 id="endTitle">Fin</h1>
+        <p id="endText" class="muted">—</p>
+
+        <div class="endGrid">
+          <div class="endCard">
+            <h2>Résumé</h2>
+            <div id="endSummary" class="muted"></div>
+          </div>
+          <div class="endCard">
+            <h2>Journal</h2>
+            <div id="endJournal" class="journal"></div>
+            <div class="row" style="justify-content:flex-end">
+              <button class="btn" id="btnSouvenir" type="button">Carte souvenir</button>
+              <button class="btn btn-ghost" id="btnReplay" type="button">Rejouer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+          </div>
+
+          <section class="section gameArt" aria-label="Illustration sous le jeu">
+            <div class="container">
+              <figure class="gameArtFigure">
+                <img
+                  class="gameArtImg"
+                  src="../assets/img/ui/game_art.png"
+                  alt="Illustration épique de Link face au danger"
+                  loading="lazy"
+                />
+                <figcaption class="muted">Astuce : remplace l’image dans <span class="code">assets/img/ui/game_art.jpg</span>.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <footer class="footer siteFooter">
+            <div class="container">
+              <div class="footerCard">
+                <div class="footerGrid">
+                  <div class="footerBrand">
+                    <a class="brand footerBrandLink" href="../index.html">
+                      <img src="../assets/logo/logo1_zelda_.jpeg" alt="Sceau d’Hyrule" />
+                      <span>Les chroniques d’Hyrule</span>
+                    </a>
+                    <p class="footerTagline">Chronologie interactive + fiches de recherches par décennie.</p>
+                  </div>
+
+                  <nav class="footerNav" aria-label="Navigation du site">
+                    <a href="../index.html">Accueil</a>
+                    <a href="../chronologie.html">Chronologie</a>
+                    <a href="../ganon.html">Ganon</a>
+                    <a href="../zelda.html">Zelda</a>
+                    <a href="../link.html">Link</a>
+                    <a href="../pages/1986-1995.html">1986–1995</a>
+                    <a href="../pages/1996-2005.html">1996–2005</a>
+                    <a href="../pages/2006-2015.html">2006–2015</a>
+                    <a href="../pages/2016-2025.html">2016–2025</a>
+                    <a href="../game/index.html">Mini‑jeu</a>
+                  </nav>
+
+                  <div class="footerMeta">
+                    <p class="footerNote"><strong>40 ans de Zelda</strong> — projet vitrine (HTML/CSS/JS). Non affilié à Nintendo.</p>
+                    <a class="footerTop" href="#contenu">Retour en haut</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
