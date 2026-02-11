@@ -29,9 +29,20 @@
           </a>
           <nav class="banner-nav" aria-label="Navigation rapide">
             <a href="chronologie.html" class="bannerBtn">Chronologie</a>
-            <a href="ganon.html" class="bannerBtn is-active">Ganon</a>
-            <a href="zelda.html" class="bannerBtn">Zelda</a>
-            <a href="link.html" class="bannerBtn">Link</a>
+            <div class="bannerPages">
+              <button
+                class="bannerBtn bannerBtn--pages is-active"
+                type="button"
+                data-characters-toggle
+                aria-expanded="false"
+                aria-controls="bannerCharactersMenu"
+              >Personnages</button>
+              <div class="bannerPagesMenu" id="bannerCharactersMenu" role="menu" hidden>
+                <a role="menuitem" href="ganon.html" aria-current="page">Ganon</a>
+                <a role="menuitem" href="zelda.html">Zelda</a>
+                <a role="menuitem" href="link.html">Link</a>
+              </div>
+            </div>
             <div class="bannerPages">
               <button
                 class="bannerBtn bannerBtn--pages"

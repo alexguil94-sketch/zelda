@@ -9,6 +9,9 @@
   --ruby:#D32F2F;
   --forest:#1B4D3E;
 
+  /* Vertical focus for the background image (reduce “only sky/clouds” on wide screens) */
+  --bg-focal-y: 60%;
+
   --bg:#0e1111;
   --paper:#f6efe1;
   --ink:#1c1f1f;
@@ -22,7 +25,7 @@
 
   /* UI tokens (theme overrides possible) */
   --ui-link: var(--gold);
-  --ui-link-hover: color-mix(in srgb, var(--gold) 75%, white);
+  --ui-link-hover: color-mix(in srgb, var(--gold) 30%, white);
   --ui-btn-text: #0f1412;
   --ui-btn-text-on-dark: #ffffff;
 
@@ -3607,16 +3610,16 @@ html[data-theme="light"]{
 }
 body{
   background-color: #0a1118;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center top, center top;
-  background-attachment: scroll, scroll;
+  background-repeat: no-repeat;
+  background-position: center var(--bg-focal-y);
+  background-attachment: scroll;
 }
 html[data-theme="light"] body{
   background-color: #e7efe8;
 }
 @media (min-width: 1024px) and (pointer: fine){
   body{
-    background-attachment: fixed, fixed;
+    background-attachment: fixed;
   }
 }
 
@@ -3772,10 +3775,10 @@ html[data-theme="dark"] body.page-ganon{
   background:
     radial-gradient(1100px 760px at 18% 0%, rgba(74,144,226,.14), transparent 58%),
     radial-gradient(900px 620px at 82% 18%, rgba(211,47,47,.12), transparent 60%),
-    linear-gradient(180deg, rgba(4,7,12,.94), rgba(2,4,8,.98)),
+    linear-gradient(180deg, rgba(4,7,12,.78), rgba(2,4,8,.92)),
     url("../assets/img/ui/bg_dark.png");
   background-size: cover, cover, cover, cover;
-  background-position: center top, center top, center top, center top;
+  background-position: center top, center top, center top, center var(--bg-focal-y);
   background-repeat: no-repeat;
   background-attachment: fixed, fixed, fixed, fixed;
 }
@@ -3848,10 +3851,10 @@ html[data-theme="dark"] body{
   background:
     radial-gradient(1200px 820px at 18% 0%, rgba(74,144,226,.14), transparent 58%),
     radial-gradient(980px 680px at 84% 18%, rgba(211,47,47,.11), transparent 60%),
-    linear-gradient(180deg, rgba(4,7,12,.94), rgba(2,4,8,.98)),
+    linear-gradient(180deg, rgba(4,7,12,.70), rgba(2,4,8,.88)),
     url("../assets/img/ui/bg_dark.png");
   background-size: cover, cover, cover, cover;
-  background-position: center top, center top, center top, center top;
+  background-position: center top, center top, center top, center var(--bg-focal-y);
   background-repeat: no-repeat;
   background-attachment: fixed, fixed, fixed, fixed;
 }
