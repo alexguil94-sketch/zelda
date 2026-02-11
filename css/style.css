@@ -4346,3 +4346,415 @@ html[data-theme="dark"] :is(
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* =========================================
+   Palettes personnages (demande)
+   - Ganon : rouge
+   - Link  : vert
+   - Zelda : doré / gris
+   ========================================= */
+
+body.page-ganon{
+  --char-primary: var(--ruby);
+  --char-secondary: color-mix(in srgb, var(--ruby) 45%, var(--gold));
+  --char-wash-1: var(--ruby);
+  --char-wash-2: color-mix(in srgb, var(--ruby) 35%, var(--gold));
+  --char-dark-1: var(--ruby);
+  --char-dark-2: #ff6b6b;
+}
+
+body.page-link{
+  --char-primary: var(--forest);
+  --char-secondary: var(--gold);
+  --char-wash-1: var(--forest);
+  --char-wash-2: var(--gold);
+  --char-dark-1: #41e39f;
+  --char-dark-2: var(--gold);
+}
+
+body.page-zelda{
+  /* Une teinte d'or plus “lisible” en clair */
+  --char-primary: color-mix(in srgb, var(--gold) 62%, var(--paper-ink));
+  --char-secondary: color-mix(in srgb, var(--stone) 70%, var(--paper-ink));
+  --char-wash-1: var(--gold);
+  --char-wash-2: var(--stone);
+  --char-dark-1: var(--gold);
+  --char-dark-2: color-mix(in srgb, var(--stone) 45%, white);
+}
+
+/* Typo + liens (hérités par la page) */
+:is(body.page-ganon, body.page-link, body.page-zelda){
+  --caps-gold: var(--char-primary);
+  --ui-link: var(--char-primary);
+  --ui-link-hover: color-mix(in srgb, var(--ui-link) 72%, white);
+  --para-red: color-mix(in srgb, var(--char-primary) 72%, var(--paper-ink));
+}
+body.page-zelda{
+  --para-red: color-mix(in srgb, var(--stone) 72%, var(--paper-ink));
+}
+
+/* Background page (clair) */
+html[data-theme="light"] body.page-ganon{
+  --ui-muted: color-mix(in srgb, var(--ruby) 40%, var(--paper-ink));
+  background:
+    radial-gradient(1100px 700px at 18% 0%, rgba(211,47,47,.20) 0%, transparent 55%),
+    radial-gradient(900px 700px at 84% 20%, rgba(242,201,76,.14) 0%, transparent 55%),
+    radial-gradient(900px 700px at 60% 92%, rgba(120,10,10,.10) 0%, transparent 60%),
+    url("../assets/img/ui/bg_light.png");
+  background-size: cover, cover, cover, cover;
+  background-position: center top, center top, center bottom, center;
+  background-attachment: fixed, fixed, fixed, fixed;
+}
+html[data-theme="light"] body.page-link{
+  --ui-muted: color-mix(in srgb, var(--forest) 45%, var(--paper-ink));
+  background:
+    radial-gradient(1100px 700px at 18% 0%, rgba(27,77,62,.18) 0%, transparent 55%),
+    radial-gradient(900px 700px at 84% 20%, rgba(242,201,76,.16) 0%, transparent 55%),
+    radial-gradient(900px 700px at 55% 92%, rgba(27,77,62,.10) 0%, transparent 60%),
+    url("../assets/img/ui/bg_light.png");
+  background-size: cover, cover, cover, cover;
+  background-position: center top, center top, center bottom, center;
+  background-attachment: fixed, fixed, fixed, fixed;
+}
+html[data-theme="light"] body.page-zelda{
+  --ui-muted: color-mix(in srgb, var(--stone) 62%, var(--paper-ink));
+  background:
+    radial-gradient(1100px 700px at 18% 0%, rgba(242,201,76,.24) 0%, transparent 55%),
+    radial-gradient(900px 700px at 84% 20%, rgba(126,126,126,.18) 0%, transparent 55%),
+    radial-gradient(900px 700px at 58% 92%, rgba(126,126,126,.10) 0%, transparent 60%),
+    url("../assets/img/ui/bg_light.png");
+  background-size: cover, cover, cover, cover;
+  background-position: center top, center top, center bottom, center;
+  background-attachment: fixed, fixed, fixed, fixed;
+}
+
+/* Surfaces principales (clair) */
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) :is(
+  .hero-text,
+  .ganonOrigin,
+  .linkOrigin,
+  .zelda-summary,
+  .zelda-accordionPanel,
+  .ganonGameCard,
+  .ganonModernCard,
+  .ganonAccordionPanel,
+  .ganonLegend,
+  .lore-card,
+  .zelda-timelineWrap,
+  .zelda-figure,
+  .link-summary,
+  .linkMeaning,
+  .linkCard,
+  .linkCheckItem,
+  .ganonLoreCard,
+  .ganonDossierCard,
+  .ganonGalleryEra,
+  .ganonRefsCard,
+  .ganonRefsItem
+){
+  border-color: color-mix(in srgb, var(--char-wash-2) 30%, var(--panel-border));
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.58)),
+    radial-gradient(900px 420px at 16% 10%, color-mix(in srgb, var(--char-wash-1) 22%, transparent), transparent 62%),
+    radial-gradient(900px 420px at 50% 92%, color-mix(in srgb, var(--char-secondary) 14%, transparent), transparent 64%),
+    radial-gradient(900px 420px at 86% 88%, color-mix(in srgb, var(--char-wash-2) 22%, transparent), transparent 62%);
+}
+
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) .hero-text{
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.20),
+    0 0 0 1px color-mix(in srgb, var(--char-primary) 18%, transparent),
+    0 0 34px color-mix(in srgb, var(--char-secondary) 16%, transparent);
+}
+
+html[data-theme="light"] :is(body.page-ganon, body.page-link) .filterBtn.is-active{
+  border-color: color-mix(in srgb, var(--char-primary) 65%, transparent);
+}
+
+/* Navigation (bannière + drawer) : accent personnage */
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) .headerBanner .banner-controls{
+  background:
+    radial-gradient(700px 180px at 20% 40%, color-mix(in srgb, var(--char-wash-1) 18%, transparent), transparent 60%),
+    radial-gradient(700px 180px at 85% 60%, color-mix(in srgb, var(--char-wash-2) 16%, transparent), transparent 62%),
+    var(--header-bg);
+}
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) .banner-nav .bannerBtn.is-active,
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) .banner-nav .bannerBtn[aria-expanded="true"]{
+  border-color: color-mix(in srgb, var(--char-primary) 55%, rgba(0,0,0,.12));
+  background:
+    radial-gradient(600px 140px at 20% 40%, color-mix(in srgb, var(--char-primary) 22%, transparent), transparent 55%),
+    rgba(255,255,255,.70);
+  color: rgba(40,28,16,.98);
+}
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) .bannerPagesMenu a[aria-current="page"],
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) .nav a.is-active{
+  border-color: color-mix(in srgb, var(--char-primary) 58%, rgba(0,0,0,.12));
+  background:
+    radial-gradient(520px 160px at 16% 40%, color-mix(in srgb, var(--char-primary) 18%, transparent), transparent 58%),
+    rgba(255,255,255,.72);
+  color: rgba(40,28,16,.98);
+}
+
+/* Éléments signature */
+html[data-theme="light"] body.page-link .link-quote{
+  border-left-color: color-mix(in srgb, var(--forest) 65%, black);
+  background:
+    radial-gradient(720px 200px at 14% 35%, color-mix(in srgb, var(--forest) 16%, transparent), transparent 60%),
+    radial-gradient(720px 200px at 86% 75%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 62%),
+    rgba(255,255,255,.52);
+}
+
+html[data-theme="light"] body.page-zelda .rune-divider{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 70%, transparent),
+    color-mix(in srgb, var(--stone) 65%, transparent),
+    transparent
+  );
+}
+html[data-theme="light"] body.page-zelda .zelda-quote{
+  border-left-color: color-mix(in srgb, var(--gold) 70%, black);
+  background:
+    radial-gradient(720px 200px at 14% 35%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 60%),
+    radial-gradient(720px 200px at 86% 75%, color-mix(in srgb, var(--stone) 12%, transparent), transparent 62%),
+    rgba(255,255,255,.52);
+}
+
+/* Hero cards: teinte personnage */
+body.page-ganon .hero-card--ganon::after{
+  background:
+    radial-gradient(760px 460px at 50% 35%, color-mix(in srgb, var(--ruby) 26%, transparent), transparent 60%),
+    radial-gradient(760px 460px at 60% 78%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 62%);
+}
+body.page-link .hero-card--link::after{
+  background:
+    radial-gradient(760px 460px at 50% 35%, color-mix(in srgb, var(--forest) 26%, transparent), transparent 60%),
+    radial-gradient(760px 460px at 60% 78%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 62%);
+}
+body.page-zelda .hero-card--zelda::after{
+  background:
+    radial-gradient(760px 460px at 50% 35%, color-mix(in srgb, var(--gold) 22%, transparent), transparent 60%),
+    radial-gradient(760px 460px at 60% 78%, color-mix(in srgb, var(--stone) 18%, transparent), transparent 62%);
+}
+
+/* =========================================
+   Dark mode: palette par personnage (sans bleu/vert global)
+   ========================================= */
+
+html[data-theme="dark"] body.page-ganon{
+  --ui-link: #ff6b6b;
+  --ui-link-hover: color-mix(in srgb, #ff6b6b 70%, white);
+  --caps-gold: #ff6b6b;
+  --site-hylia-blue: #ff6b6b;   /* titres */
+  --site-neon-green: #d32f2f;   /* marqueurs */
+  background:
+    radial-gradient(1200px 820px at 18% 0%, rgba(211,47,47,.26), transparent 58%),
+    radial-gradient(980px 680px at 84% 18%, rgba(120,10,10,.18), transparent 60%),
+    radial-gradient(900px 680px at 50% 92%, rgba(242,201,76,.08), transparent 62%),
+    linear-gradient(180deg, rgba(4,7,12,.70), rgba(2,4,8,.88)),
+    url("../assets/img/ui/bg_dark.png");
+  background-size: cover, cover, cover, cover, cover;
+  background-position: center top, center top, center bottom, center top, center var(--bg-focal-y);
+  background-repeat: no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
+}
+
+html[data-theme="dark"] body.page-link{
+  --ui-link: #41e39f;
+  --ui-link-hover: color-mix(in srgb, #41e39f 70%, white);
+  --caps-gold: #41e39f;
+  --site-hylia-blue: #41e39f;  /* titres */
+  --site-neon-green: #f2c94c;  /* marqueurs */
+  background:
+    radial-gradient(1200px 820px at 18% 0%, rgba(65,227,159,.22), transparent 58%),
+    radial-gradient(980px 680px at 84% 18%, rgba(242,201,76,.12), transparent 60%),
+    radial-gradient(900px 680px at 55% 92%, rgba(65,227,159,.10), transparent 62%),
+    linear-gradient(180deg, rgba(4,7,12,.70), rgba(2,4,8,.88)),
+    url("../assets/img/ui/bg_dark.png");
+  background-size: cover, cover, cover, cover, cover;
+  background-position: center top, center top, center bottom, center top, center var(--bg-focal-y);
+  background-repeat: no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
+}
+
+html[data-theme="dark"] body.page-zelda{
+  --ui-link: var(--gold);
+  --ui-link-hover: color-mix(in srgb, var(--gold) 70%, white);
+  --caps-gold: var(--gold);
+  --site-hylia-blue: var(--gold); /* titres */
+  --site-neon-green: color-mix(in srgb, var(--stone) 45%, white); /* marqueurs */
+  /* Remplace la section Zelda “green/blue” existante */
+  --zelda-hylia-blue: var(--gold);
+  --zelda-neon-green: color-mix(in srgb, var(--stone) 45%, white);
+  background:
+    radial-gradient(1200px 820px at 18% 0%, rgba(242,201,76,.22), transparent 58%),
+    radial-gradient(980px 680px at 84% 18%, rgba(198,204,210,.14), transparent 60%),
+    radial-gradient(900px 680px at 56% 92%, rgba(126,126,126,.10), transparent 62%),
+    linear-gradient(180deg, rgba(4,7,12,.70), rgba(2,4,8,.88)),
+    url("../assets/img/ui/bg_dark.png");
+  background-size: cover, cover, cover, cover, cover;
+  background-position: center top, center top, center bottom, center top, center var(--bg-focal-y);
+  background-repeat: no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
+}
+html[data-theme="dark"] body.page-zelda .section-head p{
+  color: rgba(214,220,228,.88);
+}
+
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) .headerBanner .banner-controls{
+  background:
+    radial-gradient(700px 180px at 20% 40%, color-mix(in srgb, var(--ui-link) 22%, transparent), transparent 60%),
+    radial-gradient(700px 180px at 85% 60%, color-mix(in srgb, var(--char-dark-2) 16%, transparent), transparent 62%),
+    var(--header-bg);
+}
+
+/* Surfaces principales (dark) */
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) :is(
+  .hero-text,
+  .portal,
+  .mini-game-callout,
+  .lore-card,
+  .linkCard,
+  .linkCheckItem,
+  .linkOrigin,
+  .ganonGameCard,
+  .ganonModernCard,
+  .ganonLoreCard,
+  .ganonDossierCard,
+  .ganonGalleryEra,
+  .ganonRefsCard,
+  .ganonRefsItem,
+  .ganonOrigin,
+  .ganonAccordionPanel,
+  .ganonLegend,
+  .zelda-summary,
+  .zelda-accordionPanel,
+  .zelda-figure,
+  .link-summary,
+  .linkMeaning,
+  .zelda-timelineWrap
+){
+  border-color: color-mix(in srgb, var(--char-dark-2) 44%, transparent);
+  background:
+    linear-gradient(180deg, rgba(9,12,20,.94), rgba(6,9,14,.92)),
+    radial-gradient(900px 420px at 14% 10%, color-mix(in srgb, var(--char-dark-1) 22%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 50% 92%, color-mix(in srgb, var(--char-secondary) 14%, transparent), transparent 64%),
+    radial-gradient(900px 420px at 86% 88%, color-mix(in srgb, var(--char-dark-2) 22%, transparent), transparent 62%);
+}
+
+html[data-theme="dark"] :is(body.page-ganon, body.page-link) .filterBtn.is-active{
+  border-color: color-mix(in srgb, var(--char-dark-1) 65%, transparent);
+}
+
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) .hero-text{
+  box-shadow:
+    0 26px 72px rgba(0,0,0,.52),
+    0 0 0 1px color-mix(in srgb, var(--char-dark-2) 18%, transparent),
+    0 0 34px color-mix(in srgb, var(--char-dark-1) 18%, transparent);
+}
+
+/* Titres en dark : glow calé sur la couleur de la page */
+html[data-theme="dark"] body.page-ganon :is(
+  .hero h1,
+  .section-head h2,
+  .portal-top h3,
+  .timeline-title,
+  .folioTitle,
+  .ficheDoc h1,
+  .ficheDoc h2,
+  .ficheDoc h3,
+  .panel h1,
+  .panel h2
+){
+  text-shadow: 0 0 14px rgba(255,107,107,.30), 0 2px 10px rgba(0,0,0,.52);
+}
+html[data-theme="dark"] body.page-link :is(
+  .hero h1,
+  .section-head h2,
+  .portal-top h3,
+  .timeline-title,
+  .folioTitle,
+  .ficheDoc h1,
+  .ficheDoc h2,
+  .ficheDoc h3,
+  .panel h1,
+  .panel h2
+){
+  text-shadow: 0 0 14px rgba(65,227,159,.26), 0 2px 10px rgba(0,0,0,.52);
+}
+html[data-theme="dark"] body.page-zelda :is(
+  .hero h1,
+  .section-head h2,
+  .portal-top h3,
+  .timeline-title,
+  .folioTitle,
+  .ficheDoc h1,
+  .ficheDoc h2,
+  .ficheDoc h3,
+  .panel h1,
+  .panel h2
+){
+  text-shadow:
+    0 0 14px rgba(242,201,76,.26),
+    0 0 24px rgba(198,204,210,.16),
+    0 2px 10px rgba(0,0,0,.52);
+}
+
+/* Zelda dark : remplace les ombres bleu/vert par doré/gris */
+html[data-theme="dark"] body.page-zelda .hero h1{
+  text-shadow:
+    0 0 16px rgba(242,201,76,.28),
+    0 0 26px rgba(198,204,210,.16),
+    0 2px 10px rgba(0,0,0,.55);
+}
+html[data-theme="dark"] body.page-zelda .zelda-heroSubtitle{
+  text-shadow: 0 0 12px rgba(198,204,210,.22);
+}
+html[data-theme="dark"] body.page-zelda .rune-divider{
+  background: linear-gradient(90deg, transparent, rgba(242,201,76,.70), rgba(198,204,210,.75), transparent);
+}
+html[data-theme="dark"] body.page-zelda .rune-divider::after{
+  border-color: rgba(242,201,76,.60);
+  background: rgba(5,10,16,.92);
+  color: var(--gold);
+}
+
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) .banner-nav .bannerBtn.is-active,
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) .banner-nav .bannerBtn[aria-expanded="true"]{
+  border-color: color-mix(in srgb, var(--ui-link) 70%, rgba(242,201,76,.22));
+  background:
+    radial-gradient(600px 140px at 20% 40%, color-mix(in srgb, var(--ui-link) 26%, transparent), transparent 55%),
+    rgba(255,255,255,.08);
+  color: color-mix(in srgb, var(--ui-link) 84%, white);
+  box-shadow: 0 16px 34px rgba(0,0,0,.26), 0 0 22px color-mix(in srgb, var(--ui-link) 22%, transparent);
+}
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) .bannerPagesMenu a[aria-current="page"],
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) .nav a.is-active{
+  border-color: color-mix(in srgb, var(--ui-link) 70%, transparent);
+  background:
+    radial-gradient(520px 160px at 16% 40%, color-mix(in srgb, var(--ui-link) 18%, transparent), transparent 58%),
+    rgba(0,0,0,.40);
+  color: color-mix(in srgb, var(--ui-link) 84%, white);
+}
+
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) :is(.ganonGameTag span, .linkTag span){
+  border-color: color-mix(in srgb, var(--char-dark-2) 40%, transparent);
+  background:
+    radial-gradient(560px 190px at 20% 38%, color-mix(in srgb, var(--char-dark-1) 26%, transparent), transparent 58%),
+    radial-gradient(560px 190px at 84% 70%, color-mix(in srgb, var(--char-dark-2) 26%, transparent), transparent 62%),
+    rgba(0,0,0,.56);
+  color: rgba(232,240,255,.96);
+}
+
+html[data-theme="dark"] body.page-link .linkOriginGame{
+  color: rgba(242,201,76,.98);
+  text-shadow: 0 0 10px rgba(242,201,76,.22);
+}
+html[data-theme="dark"] body.page-link .link-quote{
+  border-left-color: rgba(65,227,159,.70);
+  background:
+    radial-gradient(720px 200px at 14% 35%, rgba(65,227,159,.14), transparent 60%),
+    radial-gradient(720px 200px at 86% 75%, rgba(242,201,76,.14), transparent 62%),
+    rgba(5,9,16,.80);
+}
