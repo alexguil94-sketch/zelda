@@ -1016,11 +1016,29 @@ html[data-theme="light"] .navDrawer::before{
   --ui-link-hover: #ffd86a;
   --ui-ink: rgba(255,255,255,.90);
   --ui-muted: rgba(255,255,255,.72);
+
+  /* Boutons (utilisés par .btn / .btn-ghost / .icon-btn) */
+  --btn-border: color-mix(in srgb, var(--ui-link) 32%, var(--paper-line));
+  --btn-bg: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.44));
+  --btn-bg-hover: linear-gradient(180deg, color-mix(in srgb, var(--ui-link) 14%, rgba(255,255,255,.92)), rgba(255,255,255,.56));
+  --btn-text: var(--paper-ink);
+
+  --ghost-border: color-mix(in srgb, var(--ui-link) 22%, var(--paper-line));
+  --ghost-bg: rgba(255,255,255,.34);
+  --ghost-hover: rgba(242,201,76,.18);
+  --ghost-text: var(--paper-ink);
+
+  --icon-border: color-mix(in srgb, var(--header-line) 70%, transparent);
+  --icon-bg: rgba(255,255,255,.06);
+  --icon-hover: rgba(242,201,76,.12);
+  --icon-text: var(--header-ink);
+
+  --text-muted: var(--ui-muted);
 }
 
 /* Light mode = “sans noir” + vert/or + parchemin */
 html[data-theme="light"]{
-  --para-red: #8b1d1d;
+  --para-red: color-mix(in srgb, var(--blue) 72%, var(--paper-ink));
   --header-bg: linear-gradient(180deg, #1b4d3e, #143a33);
   --header-ink: #f6f1e3;
   --header-line: rgba(242,201,76,.55);
@@ -1044,6 +1062,23 @@ html[data-theme="light"]{
   --ui-link-hover: #123427;
   --ui-ink: #1f2a22;
   --ui-muted: rgba(31,42,34,.70);
+
+  --btn-border: color-mix(in srgb, var(--ui-link) 32%, rgba(0,0,0,.10));
+  --btn-bg: linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.60));
+  --btn-bg-hover: linear-gradient(180deg, color-mix(in srgb, var(--gold) 18%, rgba(255,255,255,.92)), rgba(255,255,255,.68));
+  --btn-text: var(--ui-ink);
+
+  --ghost-border: rgba(0,0,0,.12);
+  --ghost-bg: rgba(255,255,255,.52);
+  --ghost-hover: rgba(242,201,76,.18);
+  --ghost-text: var(--ui-ink);
+
+  --icon-border: rgba(0,0,0,.12);
+  --icon-bg: rgba(255,255,255,.18);
+  --icon-hover: rgba(242,201,76,.22);
+  --icon-text: var(--header-ink);
+
+  --text-muted: var(--ui-muted);
 }
 
 /* Applique le fond et la couleur globale */
@@ -1343,10 +1378,12 @@ html[data-theme="light"] .bookShell .bookmark{
    Light mode: lisibilité (Chronologie + cartes)
    ========================================= */
 html[data-theme="light"] body{ color: var(--ui-ink); }
-html[data-theme="light"] .muted,
+
 html[data-theme="light"] .hero p,
 html[data-theme="light"] .section-head p,
-html[data-theme="light"] .portal-top p,
+html[data-theme="light"] .portal-top p{ color: var(--para-red); }
+
+html[data-theme="light"] .muted,
 html[data-theme="light"] .tree-sub,
 html[data-theme="light"] .footer,
 html[data-theme="light"] .lightbox-hint{ color: var(--ui-muted); }
@@ -4393,6 +4430,10 @@ body.page-zelda{
   --para-red: color-mix(in srgb, var(--stone) 72%, var(--paper-ink));
 }
 
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda){
+  --para-red: color-mix(in srgb, var(--blue) 72%, var(--paper-ink));
+}
+
 /* Background page (clair) */
 html[data-theme="light"] body.page-ganon{
   --ui-muted: color-mix(in srgb, var(--ruby) 40%, var(--paper-ink));
@@ -4758,3 +4799,512 @@ html[data-theme="dark"] body.page-link .link-quote{
     radial-gradient(720px 200px at 86% 75%, rgba(242,201,76,.14), transparent 62%),
     rgba(5,9,16,.80);
 }
+
+/* =========================================
+   Cadres : bordures colorées (demande)
+   ========================================= */
+
+:is(body.page-ganon, body.page-link, body.page-zelda) .bookShell.panelShell{
+  position: relative;
+  isolation: isolate;
+}
+
+:is(body.page-ganon, body.page-link, body.page-zelda) :is(
+  .hero-text,
+  .portal,
+  .tree,
+  .mini-game-callout,
+  .ganonOrigin,
+  .ganonAccordionPanel,
+  .ganonGameCard,
+  .ganonModernCard,
+  .ganonLoreCard,
+  .ganonDossierCard,
+  .ganonGalleryEra,
+  .ganonRefsCard,
+  .ganonRefsItem,
+  .linkOrigin,
+  .link-summary,
+  .linkMeaning,
+  .linkCard,
+  .linkCheckItem,
+  .zelda-summary,
+  .zelda-accordionPanel,
+  .zelda-figure,
+  .zelda-timelineWrap,
+  .lore-card
+){
+  position: relative;
+  isolation: isolate;
+}
+
+html[data-theme="light"] :is(body.page-ganon, body.page-link, body.page-zelda) :is(
+  .bookShell.panelShell,
+  .hero-text,
+  .portal,
+  .tree,
+  .mini-game-callout,
+  .ganonOrigin,
+  .ganonAccordionPanel,
+  .ganonGameCard,
+  .ganonModernCard,
+  .ganonLoreCard,
+  .ganonDossierCard,
+  .ganonGalleryEra,
+  .ganonRefsCard,
+  .ganonRefsItem,
+  .linkOrigin,
+  .link-summary,
+  .linkMeaning,
+  .linkCard,
+  .linkCheckItem,
+  .zelda-summary,
+  .zelda-accordionPanel,
+  .zelda-figure,
+  .zelda-timelineWrap,
+  .lore-card
+)::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  border: 2px solid color-mix(in srgb, var(--char-primary) 58%, rgba(0,0,0,.14));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--char-secondary) 30%, rgba(255,255,255,.92));
+  opacity: .95;
+}
+
+html[data-theme="dark"] :is(body.page-ganon, body.page-link, body.page-zelda) :is(
+  .bookShell.panelShell,
+  .hero-text,
+  .portal,
+  .tree,
+  .mini-game-callout,
+  .ganonOrigin,
+  .ganonAccordionPanel,
+  .ganonGameCard,
+  .ganonModernCard,
+  .ganonLoreCard,
+  .ganonDossierCard,
+  .ganonGalleryEra,
+  .ganonRefsCard,
+  .ganonRefsItem,
+  .linkOrigin,
+  .link-summary,
+  .linkMeaning,
+  .linkCard,
+  .linkCheckItem,
+  .zelda-summary,
+  .zelda-accordionPanel,
+  .zelda-figure,
+  .zelda-timelineWrap,
+  .lore-card
+)::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  border: 2px solid color-mix(in srgb, var(--ui-link) 80%, rgba(0,0,0,.18));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--char-dark-2) 40%, rgba(255,255,255,.10));
+  opacity: .95;
+}
+
+/* =========================================
+   Chronologie : couleurs (bleu / vert / rouge)
+   ========================================= */
+
+body.page-chronologie .portal{
+  --accent: var(--gold);
+  border-color: color-mix(in srgb, var(--accent) 38%, rgba(0,0,0,.18));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 72%),
+    radial-gradient(900px 420px at 22% 12%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.42)),
+    radial-gradient(900px 500px at 20% 10%, rgba(242,201,76,.16), transparent 60%),
+    radial-gradient(900px 500px at 80% 30%, rgba(27,77,62,.12), transparent 60%);
+}
+
+body.page-chronologie .portal-top h3{
+  color: color-mix(in srgb, var(--accent) 78%, rgba(0,0,0,.86));
+}
+
+html[data-theme="dark"] body.page-chronologie .portal{
+  border-color: color-mix(in srgb, var(--accent) 52%, rgba(255,255,255,.14));
+  background:
+    linear-gradient(180deg, rgba(9,12,20,.94), rgba(6,9,14,.92)),
+    radial-gradient(900px 420px at 22% 12%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 84% 86%, rgba(0,0,0,.22), transparent 62%);
+}
+
+html[data-theme="dark"] body.page-chronologie .portal-top h3{
+  color: color-mix(in srgb, var(--accent) 74%, white);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--accent) 22%, transparent), 0 2px 10px rgba(0,0,0,.52);
+}
+
+body.page-chronologie .tree-branches .branch{
+  --accent: var(--gold);
+  padding: 10px 10px 10px 14px;
+  border-left: 5px solid color-mix(in srgb, var(--accent) 70%, rgba(0,0,0,.14));
+  border-radius: 18px;
+  background:
+    radial-gradient(700px 240px at 0% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 65%);
+}
+
+body.page-chronologie .tree-branches .branch:nth-child(1){ --accent: var(--ruby); }
+body.page-chronologie .tree-branches .branch:nth-child(2){ --accent: var(--forest); }
+body.page-chronologie .tree-branches .branch:nth-child(3){ --accent: var(--blue); }
+
+body.page-chronologie .tree-branches .branch h3{
+  color: color-mix(in srgb, var(--accent) 78%, rgba(0,0,0,.86));
+}
+
+body.page-chronologie .tree-branches .branch .tree-node{
+  border-color: color-mix(in srgb, var(--accent) 28%, rgba(0,0,0,.18));
+}
+
+body.page-chronologie .tree-branches .branch .tree-node:hover{
+  border-color: color-mix(in srgb, var(--accent) 62%, rgba(0,0,0,.18));
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.12),
+    0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+html[data-theme="dark"] body.page-chronologie .tree-branches .branch{
+  border-left-color: color-mix(in srgb, var(--accent) 72%, rgba(255,255,255,.12));
+  background:
+    radial-gradient(700px 240px at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+}
+
+html[data-theme="dark"] body.page-chronologie .tree-branches .branch h3{
+  color: color-mix(in srgb, var(--accent) 70%, white);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 18%, transparent), 0 2px 10px rgba(0,0,0,.52);
+}
+
+html[data-theme="dark"] body.page-chronologie .tree-branches .branch .tree-node{
+  border-color: color-mix(in srgb, var(--accent) 46%, rgba(255,255,255,.14));
+}
+
+html[data-theme="dark"] body.page-chronologie .tree-branches .branch .tree-node:hover{
+  border-color: color-mix(in srgb, var(--accent) 72%, rgba(255,255,255,.14));
+  background:
+    radial-gradient(700px 240px at 22% 12%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 65%),
+    rgba(0,0,0,.30);
+}
+
+:is(body.page-chronologie, body.page-decade) .siteFooter .footerCard{
+  border-color: color-mix(in srgb, var(--blue) 14%, var(--paper-line));
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.44)),
+    radial-gradient(900px 520px at 14% 0%, rgba(74,144,226,.16), transparent 62%),
+    radial-gradient(900px 520px at 86% 20%, rgba(27,77,62,.12), transparent 62%),
+    radial-gradient(900px 520px at 70% 92%, rgba(211,47,47,.12), transparent 62%),
+    url("../assets/img/ui/paper_tile.png");
+  background-size: auto, auto, auto, auto, 420px 420px;
+}
+
+:is(body.page-chronologie, body.page-decade) .siteFooter :is(.footerNav a, a.footerTop){
+  --accent: var(--gold);
+  border-left: 5px solid color-mix(in srgb, var(--accent) 70%, rgba(0,0,0,.14));
+  border-color: color-mix(in srgb, var(--accent) 28%, rgba(0,0,0,.12));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+    rgba(255,255,255,.46);
+  color: var(--paper-ink);
+}
+
+:is(body.page-chronologie, body.page-decade) .siteFooter :is(.footerNav a, a.footerTop):hover,
+:is(body.page-chronologie, body.page-decade) .siteFooter :is(.footerNav a, a.footerTop):focus-visible{
+  border-color: color-mix(in srgb, var(--accent) 70%, rgba(0,0,0,.18));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%),
+    radial-gradient(520px 160px at 18% 40%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+    rgba(255,255,255,.52);
+}
+
+:is(body.page-chronologie, body.page-decade) .siteFooter .footerNav a[href$="chronologie.html"]{ --accent: var(--blue); }
+:is(body.page-chronologie, body.page-decade) .siteFooter .footerNav a[href$="1996-2005.html"]{ --accent: var(--blue); }
+:is(body.page-chronologie, body.page-decade) .siteFooter .footerNav a[href$="2006-2015.html"]{ --accent: var(--forest); }
+:is(body.page-chronologie, body.page-decade) .siteFooter .footerNav a[href$="2016-2025.html"]{ --accent: var(--ruby); }
+:is(body.page-chronologie, body.page-decade) .siteFooter .footerNav a[href$="game/index.html"]{ --accent: var(--ruby); }
+:is(body.page-chronologie, body.page-decade) .siteFooter a.footerTop{ --accent: var(--forest); }
+
+html[data-theme="dark"] :is(body.page-chronologie, body.page-decade) .siteFooter .footerCard{
+  border-color: rgba(74,144,226,.30);
+  background:
+    linear-gradient(180deg, rgba(10,12,18,.94), rgba(6,8,12,.92)),
+    radial-gradient(900px 520px at 18% 10%, rgba(211,47,47,.20), transparent 60%),
+    radial-gradient(900px 520px at 82% 70%, rgba(74,144,226,.24), transparent 60%),
+    radial-gradient(900px 520px at 56% 92%, rgba(27,77,62,.16), transparent 62%);
+  box-shadow: 0 22px 44px rgba(0,0,0,.44);
+}
+
+html[data-theme="dark"] :is(body.page-chronologie, body.page-decade) .siteFooter :is(.footerNav a, a.footerTop){
+  border-color: color-mix(in srgb, var(--accent) 38%, rgba(255,255,255,.14));
+  border-left-color: color-mix(in srgb, var(--accent) 78%, rgba(255,255,255,.14));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    rgba(0,0,0,.34);
+  color: rgba(232,240,255,.95);
+}
+
+html[data-theme="dark"] :is(body.page-chronologie, body.page-decade) .siteFooter :is(.footerNav a, a.footerTop):hover,
+html[data-theme="dark"] :is(body.page-chronologie, body.page-decade) .siteFooter :is(.footerNav a, a.footerTop):focus-visible{
+  border-color: color-mix(in srgb, var(--accent) 72%, rgba(255,255,255,.14));
+  background:
+    radial-gradient(520px 160px at 16% 40%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 58%),
+    radial-gradient(520px 160px at 84% 70%, rgba(0,0,0,.12), transparent 62%),
+    rgba(0,0,0,.46);
+  color: color-mix(in srgb, var(--accent) 84%, white);
+}
+
+/* =========================================
+   Chronologie : encore plus de couleurs (demande)
+   ========================================= */
+
+/* Boutons : la couleur suit l'accent du portail (1986/1996/2006/2016) */
+body.page-chronologie .portal{
+  --btn-border: color-mix(in srgb, var(--accent) 55%, rgba(0,0,0,.18));
+  --btn-bg: linear-gradient(180deg, color-mix(in srgb, var(--accent) 12%, rgba(255,255,255,.86)), rgba(255,255,255,.58));
+  --btn-bg-hover: linear-gradient(180deg, color-mix(in srgb, var(--accent) 20%, rgba(255,255,255,.92)), rgba(255,255,255,.66));
+
+  --ghost-border: color-mix(in srgb, var(--accent) 38%, rgba(0,0,0,.18));
+  --ghost-bg: rgba(255,255,255,.42);
+  --ghost-hover: rgba(255,255,255,.55);
+}
+body.page-chronologie .portal :is(.btn, .btn-ghost){
+  color: color-mix(in srgb, var(--accent) 78%, rgba(0,0,0,.86));
+}
+
+html[data-theme="dark"] body.page-chronologie .portal{
+  --btn-border: color-mix(in srgb, var(--accent) 62%, rgba(255,255,255,.14));
+  --btn-bg: rgba(0,0,0,.34);
+  --btn-bg-hover: rgba(0,0,0,.46);
+
+  --ghost-border: color-mix(in srgb, var(--accent) 42%, rgba(255,255,255,.14));
+  --ghost-bg: rgba(0,0,0,.22);
+  --ghost-hover: rgba(0,0,0,.34);
+}
+html[data-theme="dark"] body.page-chronologie .portal :is(.btn, .btn-ghost){
+  color: color-mix(in srgb, var(--accent) 84%, white);
+}
+
+/* Nœuds de l'arbre : petits lavis colorés selon la branche */
+body.page-chronologie .tree-branches .branch .tree-node{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.46)),
+    radial-gradient(700px 240px at 18% 38%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 62%);
+  border-color: color-mix(in srgb, var(--accent) 32%, rgba(0,0,0,.18));
+}
+body.page-chronologie .tree-branches .branch .tree-node:hover{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.56)),
+    radial-gradient(700px 240px at 18% 38%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%);
+  border-color: color-mix(in srgb, var(--accent) 66%, rgba(0,0,0,.18));
+}
+
+html[data-theme="dark"] body.page-chronologie .tree-branches .branch .tree-node{
+  background:
+    radial-gradient(700px 240px at 18% 38%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 62%),
+    rgba(0,0,0,.26);
+  border-color: color-mix(in srgb, var(--accent) 52%, rgba(255,255,255,.14));
+}
+html[data-theme="dark"] body.page-chronologie .tree-branches .branch .tree-node:hover{
+  background:
+    radial-gradient(700px 240px at 18% 38%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 62%),
+    rgba(0,0,0,.34);
+  border-color: color-mix(in srgb, var(--accent) 78%, rgba(255,255,255,.14));
+}
+
+
+/* =========================================
+   Modale Chronologie : fenêtre "parchemin / rouleau"
+   ========================================= */
+
+body.page-chronologie .modal{ padding: 26px 16px; }
+
+body.page-chronologie .modal-panel{
+  --scroll-ink: rgba(42,36,22,.94);
+  --scroll-muted: rgba(42,36,22,.72);
+  --scroll-line: rgba(66,52,34,.22);
+  --scroll-accent: var(--gold);
+
+  width: min(880px, 96vw);
+  border-radius: 34px;
+  border: 1px solid rgba(66,52,34,.30);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.60)),
+    radial-gradient(900px 520px at 14% 0%, rgba(242,201,76,.18), transparent 62%),
+    radial-gradient(900px 520px at 86% 20%, rgba(27,77,62,.12), transparent 62%),
+    radial-gradient(900px 520px at 70% 92%, rgba(211,47,47,.10), transparent 62%),
+    url("../assets/img/ui/paper_tile.png");
+  background-size: auto, auto, auto, auto, 520px 520px;
+  box-shadow: 0 34px 110px rgba(0,0,0,.55);
+  overflow: visible;
+
+  --btn-border: color-mix(in srgb, var(--scroll-accent) 40%, rgba(66,52,34,.28));
+  --btn-bg: linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.44));
+  --btn-bg-hover: linear-gradient(180deg, color-mix(in srgb, var(--scroll-accent) 18%, rgba(255,255,255,.90)), rgba(255,255,255,.56));
+
+  --ghost-border: rgba(66,52,34,.22);
+  --ghost-bg: rgba(255,255,255,.30);
+  --ghost-hover: rgba(242,201,76,.14);
+  --ghost-text: var(--scroll-ink);
+
+  --icon-border: rgba(66,52,34,.24);
+  --icon-bg: rgba(255,255,255,.32);
+  --icon-hover: rgba(242,201,76,.18);
+  --icon-text: var(--scroll-ink);
+}
+
+html[data-theme="dark"] body.page-chronologie .modal-panel{
+  border-color: rgba(255,255,255,.12);
+  box-shadow: 0 40px 140px rgba(0,0,0,.72);
+  background:
+    radial-gradient(900px 520px at 14% 0%, rgba(242,201,76,.12), transparent 62%),
+    radial-gradient(900px 520px at 86% 20%, rgba(27,77,62,.10), transparent 62%),
+    radial-gradient(900px 520px at 70% 92%, rgba(211,47,47,.12), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,.84), rgba(255,255,255,.60)),
+    url("../assets/img/ui/paper_tile.png");
+  background-size: auto, auto, auto, auto, 520px 520px;
+}
+
+body.page-chronologie .modal-panel::before,
+body.page-chronologie .modal-panel::after{
+  content:"";
+  position:absolute;
+  left: 18px;
+  right: 18px;
+  height: 46px;
+  border-radius: 999px;
+  pointer-events:none;
+  opacity: .95;
+  background:
+    radial-gradient(60% 180% at 50% 55%, rgba(255,255,255,.78) 0%, rgba(255,255,255,0) 70%),
+    linear-gradient(180deg, rgba(66,52,34,.34), rgba(66,52,34,0) 70%);
+  filter: drop-shadow(0 18px 24px rgba(0,0,0,.20));
+}
+body.page-chronologie .modal-panel::before{ top: -18px; }
+body.page-chronologie .modal-panel::after{ bottom: -18px; transform: scaleY(-1); }
+
+body.page-chronologie .modal-head{
+  padding: 52px 26px 10px;
+  border-bottom: 1px solid rgba(66,52,34,.20);
+}
+body.page-chronologie .modal-body{ padding: 0 26px 28px; gap: 16px; }
+
+body.page-chronologie .modal-head h2{ color: var(--scroll-ink); text-shadow: 0 1px 0 rgba(255,255,255,.65); }
+body.page-chronologie .modal-head p,
+body.page-chronologie .modal-panel .muted{ color: var(--scroll-muted); }
+
+body.page-chronologie .modal-panel .bullets{ color: var(--scroll-ink); }
+body.page-chronologie .modal-panel .bullets li{ margin: 8px 0; }
+
+body.page-chronologie .modal-panel .media{
+  border-color: rgba(66,52,34,.22);
+  background: rgba(255,255,255,.40);
+  box-shadow: 0 16px 40px rgba(0,0,0,.18);
+}
+body.page-chronologie .modal-panel .media-hint{
+  background: rgba(255,255,255,.70);
+  border-color: rgba(66,52,34,.20);
+  color: var(--scroll-ink);
+}
+
+body.page-chronologie .modal-panel :is(.btn, .btn-ghost){ color: var(--scroll-ink); }
+body.page-chronologie .modal-panel :is(.btn, .btn-ghost):hover{ transform: translateY(-1px); }
+
+
+/* Garder les contrôles de zoom en mode "noir" (pour les images) */
+:where(.lightbox-panel, .fiche-lb-panel){
+  --btn-border: rgba(255,255,255,.14);
+  --btn-bg: rgba(255,255,255,.10);
+  --btn-bg-hover: rgba(255,255,255,.14);
+  --ghost-border: rgba(255,255,255,.14);
+  --ghost-bg: rgba(255,255,255,.08);
+  --ghost-hover: rgba(242,201,76,.14);
+}
+:where(.lightbox-panel, .fiche-lb-panel) .btn{ color: rgba(255,255,255,.92); }
+
+
+/* =========================================
+   Footer : plus de couleurs (demande)
+   ========================================= */
+
+.siteFooter .footerCard{
+  /* Utilise la palette personnage quand elle existe (ganon/link/zelda),
+     sinon on retombe sur un mélange chronologie (bleu/vert/rouge/or). */
+  --fw1: var(--char-primary, var(--blue));
+  --fw2: var(--char-secondary, var(--forest));
+  --fw3: var(--ruby);
+  --fw4: var(--gold);
+
+  border-color: color-mix(in srgb, var(--fw1) 18%, var(--paper-line));
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.44)),
+    radial-gradient(900px 520px at 14% 0%, color-mix(in srgb, var(--fw1) 18%, transparent), transparent 62%),
+    radial-gradient(900px 520px at 86% 20%, color-mix(in srgb, var(--fw2) 14%, transparent), transparent 62%),
+    radial-gradient(900px 520px at 70% 92%, color-mix(in srgb, var(--fw3) 12%, transparent), transparent 62%),
+    radial-gradient(900px 520px at 50% 60%, color-mix(in srgb, var(--fw4) 10%, transparent), transparent 62%),
+    url("../assets/img/ui/paper_tile.png");
+  background-size: auto, auto, auto, auto, auto, 420px 420px;
+}
+
+html[data-theme="dark"] .siteFooter .footerCard{
+  border-color: color-mix(in srgb, var(--fw1) 30%, rgba(255,255,255,.10));
+  background:
+    linear-gradient(180deg, rgba(10,12,18,.94), rgba(6,8,12,.92)),
+    radial-gradient(900px 520px at 18% 10%, color-mix(in srgb, var(--fw3) 24%, transparent), transparent 60%),
+    radial-gradient(900px 520px at 82% 70%, color-mix(in srgb, var(--fw1) 26%, transparent), transparent 60%),
+    radial-gradient(900px 520px at 56% 92%, color-mix(in srgb, var(--fw2) 18%, transparent), transparent 62%);
+}
+
+/* Liens du footer : accent selon la destination */
+.siteFooter :is(.footerNav a, a.footerTop){
+  --accent: var(--gold);
+  border-left: 5px solid color-mix(in srgb, var(--accent) 72%, rgba(0,0,0,.14));
+  border-color: color-mix(in srgb, var(--accent) 28%, rgba(0,0,0,.12));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+    rgba(255,255,255,.46);
+  color: var(--paper-ink);
+}
+.siteFooter :is(.footerNav a, a.footerTop):hover,
+.siteFooter :is(.footerNav a, a.footerTop):focus-visible{
+  border-color: color-mix(in srgb, var(--accent) 70%, rgba(0,0,0,.18));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%),
+    radial-gradient(520px 160px at 18% 40%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+    rgba(255,255,255,.52);
+  color: color-mix(in srgb, var(--accent) 62%, rgba(0,0,0,.86));
+}
+
+html[data-theme="dark"] .siteFooter :is(.footerNav a, a.footerTop){
+  border-color: color-mix(in srgb, var(--accent) 38%, rgba(255,255,255,.14));
+  border-left-color: color-mix(in srgb, var(--accent) 78%, rgba(255,255,255,.14));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    rgba(0,0,0,.34);
+  color: rgba(232,240,255,.95);
+}
+html[data-theme="dark"] .siteFooter :is(.footerNav a, a.footerTop):hover,
+html[data-theme="dark"] .siteFooter :is(.footerNav a, a.footerTop):focus-visible{
+  border-color: color-mix(in srgb, var(--accent) 72%, rgba(255,255,255,.14));
+  background:
+    radial-gradient(520px 160px at 16% 40%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 58%),
+    radial-gradient(520px 160px at 84% 70%, rgba(0,0,0,.12), transparent 62%),
+    rgba(0,0,0,.46);
+  color: color-mix(in srgb, var(--accent) 84%, white);
+}
+
+.siteFooter .footerNav a[href$="index.html"]{ --accent: var(--forest); }
+.siteFooter .footerNav a[href$="chronologie.html"]{ --accent: var(--blue); }
+.siteFooter .footerNav a[href$="ganon.html"]{ --accent: var(--ruby); }
+.siteFooter .footerNav a[href$="link.html"]{ --accent: var(--forest); }
+.siteFooter .footerNav a[href$="zelda.html"]{ --accent: color-mix(in srgb, var(--gold) 72%, var(--stone)); }
+.siteFooter .footerNav a[href$="1986-1995.html"]{ --accent: var(--gold); }
+.siteFooter .footerNav a[href$="1996-2005.html"]{ --accent: var(--blue); }
+.siteFooter .footerNav a[href$="2006-2015.html"]{ --accent: var(--forest); }
+.siteFooter .footerNav a[href$="2016-2025.html"]{ --accent: var(--ruby); }
+.siteFooter .footerNav a[href$="game/index.html"]{ --accent: var(--ruby); }
+.siteFooter a.footerTop{ --accent: var(--gold); }
